@@ -43,20 +43,20 @@ class UserCreateSessionContext {
   static async createSession(user, provider) {
     const token = jwt.sign({ userId: user._id }, global.env.key.jwtSecret, {
       algorithm: 'HS256',
-      expiresIn: 86000
+      expiresIn: 8600000
     });
     const refreshToken = jwt.sign(
       { userId: user._id, accessToken: token },
       global.env.key.jwtSecret,
       {
         algorithm: 'HS256',
-        expiresIn: 86000
+        expiresIn: 8600000
       }
     );
     let session = {
       token,
       refreshToken: refreshToken,
-      expireAt: Date.now() + 86000,
+      expireAt: Date.now() + 8600000,
       provider: provider,
       device: {
         userAgent: null,

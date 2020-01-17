@@ -22,6 +22,7 @@ export class AppComponent {
 
   subscribeToNotifications() {
     if (this.swPush.isEnabled) {
+      console.log("enabled");
       this.swPush.requestSubscription({
         serverPublicKey: this.VAPID_PUBLIC_KEY
       })
@@ -30,6 +31,8 @@ export class AppComponent {
        this._ws.postSubscription(sub).subscribe();
       })
       .catch(console.error);
+    }else{
+      console.log("swPush  broken");
     }
   }
 
