@@ -14,7 +14,8 @@
     "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
     "build:client-and-server-bundles": "ng build --prod && ng run demo:server:production --bundleDependencies all",
     "weathercardbuild": "ng build --prod --output-hashing=none && node ./mergelib.js",
-    "weatherprod": "npm run weathercardbuild && cd dist/browser && http-server -c-1"
+    "weatherprod": "npm run weathercardbuild && cd dist/browser && http-server -c-1",
+    "pwa": "ng build --prod --output-hashing=none  && cd dist/browser && http-server -c-1"
   },
   "private": true,
   "dependencies": {
