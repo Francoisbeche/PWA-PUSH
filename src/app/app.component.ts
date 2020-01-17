@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 import {SwPush, SwUpdate} from "@angular/service-worker";
 import { HttpClient } from '@angular/common/http';
 import { WeatherService } from './weather.service';
+
+import {MatSidenav} from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +13,9 @@ import { WeatherService } from './weather.service';
 })
 export class AppComponent {
   
+  @ViewChild('sidenav', {static: false}) sidenav: MatSidenav;
+
+  reason = '';
 
   readonly VAPID_PUBLIC_KEY = 'BPHZPfD6ibAOEJKIUAhVBuCm7CXisWr0i_pv25fENuJFVmHUNRWY4vSMqdKeLtNltFyuKm-_w1qpL-xOif79u4Y';
   constructor(
@@ -20,6 +25,11 @@ export class AppComponent {
   ) { }
 
 
+  close(reason: string) {
+    this.reason = reason;
+    this.sidenav.close();
+  }
+  
   subscribeToNotifications() {
     if (this.swPush.isEnabled) {
       console.log("enabled");

@@ -1,0 +1,16 @@
+.example-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .menu-icon{
+      cursor: pointer;
+      margin-left: 20px;
+  }
+
+  .app-title{
+    font-size: 30px;
+    margin-left: 20px;
+  }
