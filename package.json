@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "compile:server": "webpack --config webpack.server.config.js --progress --colors",
-    "pwa:prod": "npm run build && cd dist/browser && http-server -c-1",
+    "pwa:prod": "npm run build --prod  && cd dist/browser && http-server -c-1",
     "serve:ssr": "node dist/server",
     "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
     "build:client-and-server-bundles": "ng build --prod && ng run demo:server:production --bundleDependencies all",
@@ -32,10 +32,12 @@
     "@nguniversal/express-engine": "^8.2.6",
     "@nguniversal/module-map-ngfactory-loader": "v8.2.6",
     "concat": "^1.0.3",
+    "cors": "^2.8.5",
     "express": "^4.15.2",
     "pwa": "^1.9.7",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
+    "web-push": "^3.4.3",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
