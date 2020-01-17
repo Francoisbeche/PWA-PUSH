@@ -28,13 +28,7 @@ export class WeatherService {
   }
   postSubscription(sub: PushSubscription) {
     console.log("post");
-    const headers = new HttpHeaders()
-      .set("Authorization", `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZTIxYTZjNjM5OWRkMTJlNmM2ZDNmYTAiLCJpYXQiOjE1NzkyNjM2ODYsImV4cCI6MTU3OTM0OTY4Nn0.jPO-8ykxLI-LyaY-FgSyXej2sEzP5GrZ5VP_RPGsFeY`)
-      .set('Content-Type', 'application/json')
-      .set('Accept', 'application/json')
-      .set('X-Requested-With', 'XMLHttpRequest')
-
-    return this._http.post(this.notificationURL, sub, { headers: headers}).pipe(catchError(this.handlError));
+    return this._http.post(this.notificationURL, sub).pipe(catchError(this.handlError));
   }
 
   handlError(error) {

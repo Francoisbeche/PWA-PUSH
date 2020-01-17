@@ -7,7 +7,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { WeatherService } from './weather.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { TokenInterceptor } from './tokenInterceptor.service';
+import { TokenInterceptor } from './token.interceptor';
 
 @NgModule({
   declarations: [
