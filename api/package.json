@@ -37,7 +37,7 @@
     "mongoose-paginate-v2": "^1.3.2",
     "mongoose-regex-search": "^0.5.2",
     "pretty-error": "^2.1.1",
-    "underscore": "^1.9.1",
+    "underscore": "^1.12.1",
     "uniqid": "^5.0.3",
     "winston": "^3.2.1"
   },
